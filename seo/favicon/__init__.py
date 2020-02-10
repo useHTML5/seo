@@ -1,1 +1,1 @@
-default_app_config = 'design.assets.seo.favicon.apps.FaviconConfig'
+default_app_config = 'seo.favicon.apps.FaviconConfig'

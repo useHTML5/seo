@@ -5,5 +5,5 @@ from django.apps import AppConfig
 
 
 class ParamsConfig(AppConfig):
-    name = 'design.assets.seo.params'
+    name = 'seo.params'
     verbose_name = 'Переменные в шаблоне'

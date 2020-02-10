@@ -3,5 +3,5 @@ from django.apps import AppConfig
 
 
 class FileConfig(AppConfig):
-    name = 'design.assets.seo.files'
+    name = 'seo.files'
     verbose_name = u"Файлы подтверждения"

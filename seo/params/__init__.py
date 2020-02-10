@@ -1,1 +1,1 @@
-default_app_config = 'design.assets.seo.params.apps.ParamsConfig'
+default_app_config = 'seo.params.apps.ParamsConfig'

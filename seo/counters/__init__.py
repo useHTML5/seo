@@ -1,1 +1,1 @@
-default_app_config = 'design.assets.seo.counters.apps.CountersConfig'
+default_app_config = 'seo.counters.apps.CountersConfig'

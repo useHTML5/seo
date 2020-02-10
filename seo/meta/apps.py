@@ -3,5 +3,5 @@ from django.apps import AppConfig
 
 
 class MetaConfig(AppConfig):
-    name = 'design.assets.seo.meta'
+    name = 'seo.meta'
     verbose_name = u"Метатеги"

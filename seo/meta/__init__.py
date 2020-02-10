@@ -1,1 +1,1 @@
-default_app_config = 'design.assets.seo.meta.apps.MetaConfig'
+default_app_config = 'seo.meta.apps.MetaConfig'

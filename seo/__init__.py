@@ -1,1 +1,1 @@
-default_app_config = 'design.assets.seo.apps.SeoConfig'
+default_app_config = 'seo.apps.SeoConfig'

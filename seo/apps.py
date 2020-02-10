@@ -3,5 +3,5 @@ from django.apps import AppConfig
 
 
 class SeoConfig(AppConfig):
-    name = 'design.assets.seo'
+    name = 'seo'
     verbose_name = u"SEO"
