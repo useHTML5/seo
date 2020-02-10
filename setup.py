@@ -1,9 +1,9 @@
-from setuptools import setup, find_namespace_packages
+from setuptools import setup, find_packages
 
 setup(
     name="seo",
     version="0.1",
-    packages=find_namespace_packages(),
+    packages=find_packages(),
     install_requires=[
         "django>=2.2",
         'django-solo',
