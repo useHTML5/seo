@@ -1,13 +1,16 @@
 from django import template
-
+from django.core.cache import cache
 register = template.Library()
 
 
 @register.inclusion_tag('seo/data.html')
 def seo_meta():
     try:
-        from seo.meta.models import Meta
-        meta = Meta.objects.filter(show=True).values_list('content', flat=True)
+        meta = cache.get('seo_meta')
+        if meta is None:
+            from seo.meta.models import Meta
+            meta = Meta.objects.filter(show=True).values_list('content', flat=True)
+            cache.set('seo_meta', meta)
         return {
             'data': " ".join(meta)
         }
@@ -32,8 +35,11 @@ def seo_param(param, name='', value=False):
 @register.inclusion_tag('seo/data.html')
 def seo_counters():
     try:
-        from seo.counters.models import Counter
-        counters = Counter.objects.filter(show=True).values_list('content', flat=True)
+        counters = cache.get('seo_counters')
+        if counters is None:
+            from seo.counters.models import Counter
+            counters = Counter.objects.filter(show=True).values_list('content', flat=True)
+            cache.set('seo_counters', counters)
         return {
             'data': " ".join(counters)
         }
@@ -44,8 +50,11 @@ def seo_counters():
 @register.inclusion_tag('seo/favicon.html')
 def seo_favicon():
     try:
-        from seo.favicon.models import Favicon
-        favicon = Favicon.get_solo().favicon
+        favicon = cache.get('seo_favicon')
+        if favicon is None:
+            from seo.favicon.models import Favicon
+            favicon = Favicon.get_solo().favicon
+            cache.set('seo_favicon', favicon)
         return {
             'data': favicon
         }
